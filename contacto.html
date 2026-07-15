@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Cotiza tu proyecto con Vecxtor</title>
+  <meta name="description" content="Contacta a Vecxtor para cotizar paginas web, sistemas de digitalizacion y software a medida en El Poblado Campestre.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vecxtor.co/contacto">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="contacto">
+  <header class="site-header" data-header>
+    <a class="brand" href="Index.html"><span class="brand-mark">V</span><span>Vecxtor</span></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" data-nav>
+      <a href="Index.html" data-route="inicio">Inicio</a>
+      <a href="nosotros.html" data-route="nosotros">Nosotros</a>
+      <a href="servicios.html" data-route="servicios">Servicios</a>
+      <a href="proyectos.html" data-route="proyectos">Proyectos</a>
+      <a href="proceso.html" data-route="proceso">Proceso</a>
+      <a href="contacto.html" data-route="contacto">Contacto</a>
+    </nav>
+    <a class="header-cta" href="contacto.html">Cotizar</a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Contacto</p>
+      <h1>Cuentanos que quieres digitalizar y te proponemos la ruta mas clara.</h1>
+      <p>Completa el formulario y se generara un mensaje listo para WhatsApp o correo.</p>
+    </section>
+
+    <section class="section contact-layout">
+      <form class="contact-form" data-contact-form>
+        <label>
+          Nombre
+          <input name="name" type="text" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Negocio
+          <input name="business" type="text" placeholder="Nombre del negocio">
+        </label>
+        <label>
+          Servicio de interes
+          <select name="service" required>
+            <option value="">Selecciona una opcion</option>
+            <option>Pagina web</option>
+            <option>Software a medida</option>
+            <option>Digitalizacion de procesos</option>
+            <option>Automatizacion comercial</option>
+          </select>
+        </label>
+        <label>
+          Presupuesto aproximado
+          <select name="budget">
+            <option>Por definir</option>
+            <option>Menos de $1.000.000 COP</option>
+            <option>$1.000.000 - $3.000.000 COP</option>
+            <option>$3.000.000 - $7.000.000 COP</option>
+            <option>Mas de $7.000.000 COP</option>
+          </select>
+        </label>
+        <label class="full">
+          Mensaje
+          <textarea name="message" rows="5" placeholder="Describe tu idea, problema o proceso actual" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="button primary" type="submit">Preparar mensaje</button>
+          <a class="button secondary" data-mail-link href="mailto:hola@vecxtor.co">Enviar correo</a>
+        </div>
+        <p class="form-note" data-form-note>Tambien puedes escribir directo por WhatsApp.</p>
+      </form>
+
+      <aside class="contact-card">
+        <span class="eyebrow">Respuesta local</span>
+        <h2>Hablemos de tu proyecto sin vueltas.</h2>
+        <p>Vecxtor atiende proyectos de paginas web, software y digitalizacion para El Poblado Campestre y zonas cercanas.</p>
+        <ul>
+          <li>WhatsApp: +57 300 000 0000</li>
+          <li>Correo: hola@vecxtor.co</li>
+          <li>Horario: lunes a sabado</li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><a class="brand footer-brand" href="Index.html"><span class="brand-mark">V</span><span>Vecxtor</span></a><p>Paginas web, digitalizacion y software para El Poblado Campestre.</p></div>
+    <nav><a href="nosotros.html">Nosotros</a><a href="servicios.html">Servicios</a><a href="proyectos.html">Proyectos</a></nav>
+  </footer>
+  <a class="floating-whatsapp" href="https://wa.me/573000000000?text=Hola%20Vecxtor,%20quiero%20cotizar%20un%20proyecto%20digital" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">WA</a>
+  <script src="app.js"></script>
+</body>
+</html>
