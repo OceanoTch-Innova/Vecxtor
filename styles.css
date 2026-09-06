@@ -769,6 +769,56 @@ input[type="range"] {
   color: var(--muted);
 }
 
+.contact-card ul a {
+  color: var(--green-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.financial-promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 940px;
+  margin: 0 auto clamp(62px, 8vw, 110px);
+  padding: 16px 20px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.financial-promo span {
+  color: var(--green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.financial-promo p {
+  margin: 3px 0 0;
+  font-size: 0.94rem;
+}
+
+.financial-promo a {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  color: var(--green-dark);
+  font-size: 0.86rem;
+  font-weight: 850;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.financial-promo a:hover {
+  color: #ffffff;
+  background: var(--green);
+  border-color: var(--green);
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -887,7 +937,8 @@ input[type="range"] {
   .hero-actions,
   .cta-band,
   .site-footer,
-  .form-actions {
+  .form-actions,
+  .financial-promo {
     align-items: stretch;
     flex-direction: column;
   }

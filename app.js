@@ -187,13 +187,14 @@
   if (contactForm) {
     const note = document.querySelector("[data-form-note]");
     const mailLink = document.querySelector("[data-mail-link]");
+    const contactEmail = "consulta.finanzas@oceanotech.site";
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("plan");
     if (plan) {
       const service = contactForm.elements.service;
       if (plan === "software") service.value = "Software a medida";
-      if (plan === "web-auto") service.value = "Automatizacion comercial";
-      if (plan === "base") service.value = "Pagina web";
+      if (plan === "web-auto") service.value = "Automatización comercial";
+      if (plan === "base") service.value = "Página web";
     }
 
     contactForm.addEventListener("submit", (event) => {
@@ -207,10 +208,10 @@
         `Mensaje: ${data.get("message")}`
       ].filter(Boolean).join(" ");
       const encoded = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/573000000000?text=${encoded}`;
-      const mailtoUrl = `mailto:hola@vecxtor.co?subject=${encodeURIComponent("Cotizacion Vecxtor")}&body=${encoded}`;
+      const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent("Consulta desde Vecxtor")}&body=${encoded}`;
       mailLink.href = mailtoUrl;
-      note.innerHTML = `Mensaje listo. <a href="${whatsappUrl}" target="_blank" rel="noopener">Abrir WhatsApp</a> o usa el boton de correo.`;
+      note.textContent = "Tu consulta está lista. Se abrirá tu correo para que puedas enviarla.";
+      window.location.href = mailtoUrl;
     });
   }
 })();
