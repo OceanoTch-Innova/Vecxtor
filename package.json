@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "opennext-cloudflare build"
+    "build": "opennextjs-cloudflare build"
   },
   "engines": {
     "node": ">=20"
