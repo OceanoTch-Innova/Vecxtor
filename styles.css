@@ -754,6 +754,11 @@ input[type="range"] {
   color: var(--muted);
 }
 
+.form-note.success {
+  color: var(--green-dark);
+  font-weight: 800;
+}
+
 .contact-card {
   padding: 26px;
 }

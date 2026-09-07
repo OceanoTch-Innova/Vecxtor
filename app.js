@@ -185,6 +185,8 @@
 
   const contactForm = document.querySelector("[data-contact-form]");
   if (contactForm) {
+    const note = contactForm.querySelector("[data-form-note]");
+    const submitButton = contactForm.querySelector("button[type=submit]");
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("plan");
     if (plan) {
@@ -194,5 +196,29 @@
       if (plan === "base") service.value = "Página web";
     }
 
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(contactForm)
+        });
+
+        if (!response.ok) throw new Error("No se pudo enviar el formulario");
+
+        contactForm.reset();
+        note.textContent = "Nos contactaremos pronto. Gracias por escribirnos.";
+        note.classList.add("success");
+        submitButton.textContent = "Consulta enviada";
+      } catch (error) {
+        note.textContent = "No pudimos enviar la consulta. Intenta de nuevo o escríbenos por correo.";
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar consulta";
+      }
+    });
   }
 })();
