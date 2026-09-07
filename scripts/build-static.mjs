@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readdir, rm } from "node:fs/promises";
+import { cp, mkdir, readdir, rm } from "node:fs/promises";
 import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -19,13 +19,11 @@ if (!entryFile) {
 
 await rm(outputDirectory, { recursive: true, force: true });
 await mkdir(outputDirectory, { recursive: true });
-await Promise.all(
-  staticFiles.map((fileName) =>
-    copyFile(
-      join(projectRoot, fileName),
-      join(outputDirectory, fileName === entryFile ? "index.html" : fileName)
-    )
-  )
-);
+await Promise.all(staticFiles.map((fileName) =>
+  cp(join(projectRoot, fileName), join(outputDirectory, fileName === entryFile ? "index.html" : fileName))
+));
+await cp(join(projectRoot, "Routing"), join(outputDirectory, "Routing"), {
+  recursive: true
+});
 
 console.log(`Sitio estático generado en dist (${staticFiles.length} archivos).`);

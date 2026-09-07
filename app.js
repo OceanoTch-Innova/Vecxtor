@@ -185,9 +185,6 @@
 
   const contactForm = document.querySelector("[data-contact-form]");
   if (contactForm) {
-    const note = document.querySelector("[data-form-note]");
-    const mailLink = document.querySelector("[data-mail-link]");
-    const contactEmail = "consulta.finanzas@oceanotech.site";
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("plan");
     if (plan) {
@@ -197,21 +194,5 @@
       if (plan === "base") service.value = "Página web";
     }
 
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = new FormData(contactForm);
-      const message = [
-        `Hola Vecxtor, soy ${data.get("name")}.`,
-        data.get("business") ? `Mi negocio es ${data.get("business")}.` : "",
-        `Me interesa: ${data.get("service")}.`,
-        `Presupuesto: ${data.get("budget")}.`,
-        `Mensaje: ${data.get("message")}`
-      ].filter(Boolean).join(" ");
-      const encoded = encodeURIComponent(message);
-      const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent("Consulta desde Vecxtor")}&body=${encoded}`;
-      mailLink.href = mailtoUrl;
-      note.textContent = "Tu consulta está lista. Se abrirá tu correo para que puedas enviarla.";
-      window.location.href = mailtoUrl;
-    });
   }
 })();

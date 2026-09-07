@@ -32,7 +32,11 @@
     </section>
 
     <section class="section contact-layout">
-      <form class="contact-form" data-contact-form>
+      <form class="contact-form" data-contact-form action="https://formsubmit.co/contacto@oceanotech.site" method="POST">
+        <input type="hidden" name="_subject" value="Vecxtor | Nueva solicitud de cotización">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://vecxtor.co/Routing/contacto.html?enviado=1">
         <label>
           Nombre
           <input name="name" type="text" placeholder="Tu nombre" required>
@@ -67,9 +71,9 @@
         </label>
         <div class="form-actions">
           <button class="button primary" type="submit">Enviar consulta</button>
-          <a class="button secondary" data-mail-link href="mailto:consulta.finanzas@oceanotech.site">Enviar por correo</a>
+          <a class="button secondary" data-mail-link href="mailto:contacto@oceanotech.site?subject=Vecxtor%20%7C%20Nueva%20solicitud%20de%20cotizacion">Enviar por correo</a>
         </div>
-        <p class="form-note" data-form-note>Al enviar, se abrirá tu correo con todos los datos de la consulta.</p>
+        <p class="form-note" data-form-note>Tu consulta se enviará a contacto@oceanotech.site con la etiqueta Vecxtor.</p>
       </form>
 
       <aside class="contact-card">
@@ -77,7 +81,7 @@
         <h2>Hablemos de tu proyecto sin vueltas.</h2>
         <p>Cuéntanos lo que necesitas en el formulario. Así podremos revisar tu caso y responderte con una propuesta clara.</p>
         <ul>
-          <li>Correo: <a href="mailto:consulta.finanzas@oceanotech.site">consulta.finanzas@oceanotech.site</a></li>
+          <li>Correo: <a href="mailto:contacto@oceanotech.site">contacto@oceanotech.site</a></li>
           <li>Atención: lunes a sábado</li>
         </ul>
       </aside>
