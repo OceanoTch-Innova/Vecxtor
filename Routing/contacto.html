@@ -42,6 +42,10 @@
           <input name="name" type="text" placeholder="Tu nombre" required>
         </label>
         <label>
+          Correo o número de contacto
+          <input name="contact" type="text" placeholder="tu@correo.com o tu número" autocomplete="email tel" required>
+        </label>
+        <label>
           Negocio
           <input name="business" type="text" placeholder="Nombre del negocio">
         </label>
@@ -55,16 +59,6 @@
             <option>Automatización comercial</option>
           </select>
         </label>
-        <label>
-          Presupuesto aproximado
-          <select name="budget">
-            <option>Por definir</option>
-            <option>Menos de $1.000.000 COP</option>
-            <option>$1.000.000 - $3.000.000 COP</option>
-            <option>$3.000.000 - $7.000.000 COP</option>
-            <option>Mas de $7.000.000 COP</option>
-          </select>
-        </label>
         <label class="full">
           Mensaje
           <textarea name="message" rows="5" placeholder="Describe tu idea, problema o proceso actual" required></textarea>
@@ -73,7 +67,7 @@
           <button class="button primary" type="submit">Enviar consulta</button>
           <a class="button secondary" data-mail-link href="mailto:contacto@oceanotech.site?subject=Vecxtor%20%7C%20Nueva%20solicitud%20de%20cotizacion">Enviar por correo</a>
         </div>
-        <p class="form-note" data-form-note>Tu consulta se enviará a contacto@oceanotech.site con la etiqueta Vecxtor.</p>
+        <p class="form-note" data-form-note>Déjanos tu correo o número para poder contactarte. Tu consulta llegará a contacto@oceanotech.site con la etiqueta Vecxtor.</p>
       </form>
 
       <aside class="contact-card">
