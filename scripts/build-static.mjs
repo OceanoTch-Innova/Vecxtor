@@ -25,5 +25,16 @@ await Promise.all(staticFiles.map((fileName) =>
 await cp(join(projectRoot, "Routing"), join(outputDirectory, "Routing"), {
   recursive: true
 });
+await mkdir(join(outputDirectory, "assets", "brand"), { recursive: true });
+await mkdir(join(outputDirectory, "assets", "imagenes", "favicon.png"), { recursive: true });
+await cp(join(projectRoot, "assets", "brand", "vintcol-logo.png"), join(outputDirectory, "assets", "brand", "vintcol-logo.png"));
+await cp(join(projectRoot, "assets", "imagenes", "favicon.png", "favicon.png"), join(outputDirectory, "assets", "imagenes", "favicon.png", "favicon.png"));
+for (const fileName of ["robots.txt", "sitemap.xml", "_headers", "_redirects"]) {
+  try {
+    await cp(join(projectRoot, fileName), join(outputDirectory, fileName));
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+}
 
 console.log(`Sitio estático generado en dist (${staticFiles.length} archivos).`);

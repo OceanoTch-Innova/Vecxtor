@@ -1,9 +1,10 @@
 {
-  "name": "vecxtor",
+  "name": "vintcol",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build-static.mjs"
+    "build": "node scripts/build-static.mjs",
+    "lint": "node --check app.js && node --check scripts/build-static.mjs"
   },
   "engines": {
     "node": ">=20"
