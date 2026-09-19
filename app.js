@@ -189,6 +189,10 @@
     const mailLink = document.querySelector("[data-mail-link]");
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("plan");
+    if (params.get("sent") === "1") {
+      note.textContent = "Solicitud enviada. Te responderemos lo antes posible.";
+    }
+
     if (plan) {
       const service = contactForm.elements.service;
       if (plan === "software") service.value = "Software a medida";
@@ -197,7 +201,6 @@
     }
 
     contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
       const data = new FormData(contactForm);
       const message = [
         `Hola Vecxtor, soy ${data.get("name")}.`,
@@ -208,9 +211,9 @@
       ].filter(Boolean).join(" ");
       const encoded = encodeURIComponent(message);
       const whatsappUrl = `https://wa.me/573000000000?text=${encoded}`;
-      const mailtoUrl = `mailto:hola@vecxtor.co?subject=${encodeURIComponent("Cotizacion Vecxtor")}&body=${encoded}`;
+      const mailtoUrl = `mailto:contacto@oceanotech.site?subject=${encodeURIComponent("Cotizacion Vecxtor")}&body=${encoded}`;
       mailLink.href = mailtoUrl;
-      note.innerHTML = `Mensaje listo. <a href="${whatsappUrl}" target="_blank" rel="noopener">Abrir WhatsApp</a> o usa el boton de correo.`;
+      note.innerHTML = `Enviando tu solicitud. Tambien puedes <a href="${whatsappUrl}" target="_blank" rel="noopener">abrir WhatsApp</a>.`;
     });
   }
 })();

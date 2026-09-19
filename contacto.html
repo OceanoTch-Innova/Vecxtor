@@ -32,7 +32,11 @@
     </section>
 
     <section class="section contact-layout">
-      <form class="contact-form" data-contact-form>
+      <form class="contact-form" data-contact-form action="https://formsubmit.co/contacto@oceanotech.site" method="POST">
+        <input type="hidden" name="_subject" value="Nueva solicitud de cotizacion | Vecxtor">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://vecxtor.co/contacto.html?sent=1">
         <label>
           Nombre
           <input name="name" type="text" placeholder="Tu nombre" required>
@@ -40,6 +44,10 @@
         <label>
           Negocio
           <input name="business" type="text" placeholder="Nombre del negocio">
+        </label>
+        <label>
+          Correo
+          <input name="email" type="email" placeholder="tu@correo.com">
         </label>
         <label>
           Servicio de interes
@@ -67,7 +75,7 @@
         </label>
         <div class="form-actions">
           <button class="button primary" type="submit">Preparar mensaje</button>
-          <a class="button secondary" data-mail-link href="mailto:hola@vecxtor.co">Enviar correo</a>
+          <a class="button secondary" data-mail-link href="mailto:contacto@oceanotech.site">Enviar correo</a>
         </div>
         <p class="form-note" data-form-note>Tambien puedes escribir directo por WhatsApp.</p>
       </form>
@@ -78,7 +86,7 @@
         <p>Vecxtor atiende proyectos de paginas web, software y digitalizacion para El Poblado Campestre y zonas cercanas.</p>
         <ul>
           <li>WhatsApp: +57 300 000 0000</li>
-          <li>Correo: hola@vecxtor.co</li>
+          <li>Correo: contacto@oceanotech.site</li>
           <li>Horario: lunes a sabado</li>
         </ul>
       </aside>
